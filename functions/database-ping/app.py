@@ -45,7 +45,8 @@ engine = sqlalchemy.create_engine(
         "ssl": {
             "ssl_ca": "./AmazonRootCA1.pem",
         }
-    }
+    },
+    pool_recycle=50,
 )
 
 @tracer.capture_lambda_handler
